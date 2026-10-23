@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/transacciones")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5173"})
 public class TransaccionController {
 
     private final TransaccionService transaccionService;
@@ -34,11 +34,7 @@ public class TransaccionController {
                              @RequestParam String descripcion,
                              @RequestParam Double monto) {
 
-        Categoria categoria = categoriaService.listarTodas()
-                .stream()
-                .filter(c -> c.getId().equals(categoriaId))
-                .findFirst()
-                .orElseThrow(() -> new RuntimeException("Categoría no encontrada"));
+        Categoria categoria = categoriaService.buscarPorId(categoriaId);
 
         Transaccion t = new Transaccion();
         t.setCategoria(categoria);

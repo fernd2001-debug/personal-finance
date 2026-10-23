@@ -11,8 +11,8 @@
 	<groupId>com.ferfinanzas</groupId>
 	<artifactId>personal-finance</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name/>
-	<description/>
+	<name>personal-finance</name>
+	<description>REST API for personal income and expense tracking with Spring Boot and MySQL</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -43,6 +43,11 @@
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
